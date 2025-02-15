@@ -20,3 +20,13 @@ if "team_members" not in st.session_state:
         "Klea Halili",
         "Andri Peti",
     ]
+
+
+pages = {
+    "Overview": [
+        st.Page("pages/introduction.py", title="Introduction"),
+    ],
+}
+
+pg = st.navigation(pages)
+pg.run()
