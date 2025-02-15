@@ -25,6 +25,7 @@ if "team_members" not in st.session_state:
 pages = {
     "Overview": [
         st.Page("pages/introduction.py", title="Introduction"),
+        st.Page("pages/big_data_characteristics.py", title="Big Data Characteristics"),
     ],
 }
 
