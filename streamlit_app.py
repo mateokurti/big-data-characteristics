@@ -31,6 +31,9 @@ pages = {
         st.Page("pages/demographics.py", title="📊 Demographics"),
         st.Page("pages/health_conditions.py", title="🩺 Health Conditions"),
     ],
+    "Interactive Analysis": [
+        st.Page("pages/interactive_analysis.py", title="📈 Interactive Analysis"),
+    ],
 }
 
 pg = st.navigation(pages)
