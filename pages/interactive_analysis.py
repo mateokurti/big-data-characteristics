@@ -37,3 +37,10 @@ scatter_x = st.selectbox("Select X-axis", numeric_data.columns, index=0)
 scatter_y = st.selectbox("Select Y-axis", numeric_data.columns, index=1)
 fig = px.scatter(data_sample, x=scatter_x, y=scatter_y, title=f"Scatter Plot: {scatter_x} vs {scatter_y}")
 st.plotly_chart(fig, use_container_width=True)
+
+# Word Cloud for Text Analysis
+st.write("### ☁ Word Cloud for Common Terms")
+text_col = st.selectbox("Select a text column for word cloud", data_sample.select_dtypes(include=[object]).columns)
+all_text = " ".join(data_sample[text_col].dropna().astype(str))
+wordcloud = WordCloud(width=800, height=400, background_color='white').generate(all_text)
+st.image(wordcloud.to_array(), use_container_width=True)
