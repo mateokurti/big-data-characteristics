@@ -27,6 +27,9 @@ pages = {
         st.Page("pages/introduction.py", title="Introduction"),
         st.Page("pages/big_data_characteristics.py", title="Big Data Characteristics"),
     ],
+    "Patient Data": [
+        st.Page("pages/demographics.py", title="📊 Demographics"),
+    ],
 }
 
 pg = st.navigation(pages)
