@@ -25,3 +25,15 @@ corr_matrix = numeric_data.corr()
 fig = px.imshow(corr_matrix, text_auto=True, aspect='auto', title="Correlation Matrix of Numeric Features")
 st.plotly_chart(fig, use_container_width=True)
 
+# Dynamic Histogram
+st.write("### 📈 Dynamic Histogram")
+hist_col = st.selectbox("Select a column for histogram", numeric_data.columns)
+fig = px.histogram(data_sample, x=hist_col, title=f"Distribution of {hist_col}")
+st.plotly_chart(fig, use_container_width=True)
+
+# Scatter Plot with User Selection
+st.write("### 📌 Scatter Plot")
+scatter_x = st.selectbox("Select X-axis", numeric_data.columns, index=0)
+scatter_y = st.selectbox("Select Y-axis", numeric_data.columns, index=1)
+fig = px.scatter(data_sample, x=scatter_x, y=scatter_y, title=f"Scatter Plot: {scatter_x} vs {scatter_y}")
+st.plotly_chart(fig, use_container_width=True)
