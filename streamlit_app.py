@@ -29,6 +29,7 @@ pages = {
     ],
     "Patient Data": [
         st.Page("pages/demographics.py", title="📊 Demographics"),
+        st.Page("pages/health_conditions.py", title="🩺 Health Conditions"),
     ],
 }
 
