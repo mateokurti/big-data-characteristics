@@ -74,3 +74,24 @@ for category, labels in data_types.items():
             """,
             unsafe_allow_html=True,
         )
+
+# Veracity Analysis
+st.write("## 📉 Veracity Analysis")
+missing_values = st.session_state.data.isnull().sum()
+missing_values = missing_values[missing_values > 0]
+if not missing_values.empty:
+    st.warning("The dataset contains missing values in the following columns:")
+    st.dataframe(missing_values.rename("Missing Count"))
+else:
+    st.success("No missing values detected in the dataset.")
+
+# Value Analysis
+st.write("## 💡 Value Analysis")
+st.success(
+    "This dataset provides valuable insights into patient demographics, health conditions, and lifestyle factors. Potential applications include:"
+)
+st.markdown("- ✅ Identifying high-risk groups for chronic diseases.")
+st.markdown(
+    "- ✅ Understanding correlations between lifestyle choices and medical conditions."
+)
+st.markdown("- ✅ Assessing the impact of vaccines and medical tests.")
